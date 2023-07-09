@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- H E A D -->
+<%- include('../partials/head',{ title:'home', }) %>
+<!-- / H E A D -->
+    <body class="carrito">
+        <!-- H E A D E R -->
+        <%- include('../partials/header',{ title:'home', }) %>
+        <!-- / H E A D E R -->
+        <!-- M A I N -->
+            <main class="carrito__main">
+                <section class="carrito__main__section--productos">
+
+                    <div class="products-caja2">
+                        <p class="carrito__main__section--pruductos-title">Datos de envio</p>
+                        <div class="linea">
+                            <hr>
+                        </div>
+                        <form action="/cartAdress" method="POST">
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Nombre</label>
+                                <input class="form__input" type="text" name="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Apellido</label>
+                                <input class="form__input" type="text" name="apellido" placeholder="Apellido">
+                            </div>
+                            <div class="form-box" id="entero">
+                                <label class="form__label" for="">Email</label>
+                                <input class="form__input" type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Telefono</label>
+                                <input class="form__input" type="tel" name="telefono" placeholder="Telefono">
+                            </div>
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Codigo de area</label>
+                                <input class="form__input" type="tel" name="codigoarea" placeholder="Codigo de area">
+                            </div>
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Ciudad</label>
+                                <input class="form__input" type="text" name="ciudad" placeholder="Ciudad">
+                            </div>
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Provincia</label>
+                                <input class="form__input" type="text" name="provincia" placeholder="Provincia">
+                            </div>
+                            <div class="form-box" id="entero">
+                                <label class="form__label" for="">Barrio</label>
+                                <input class="form__input" type="text" name="barrio" placeholder="Barrio">
+                            </div>
+                            <div class="form-box" id="entero">
+                                <label class="form__label" for="">Calle</label>
+                                <input class="form__input" type="text" name="calle" placeholder="Calle">
+                            </div>
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Codigo postal</label>
+                                <input class="form__input" type="number" name="codigopostal" placeholder="Codigo postal">
+                            </div>
+                            <div class="form-box" id="medio">
+                                <label class="form__label" for="">Pais</label>
+                                <select name="pais">
+                                    <option value="argentina">Argentina</option>
+                                    <option value="brasil">Brasil</option>
+                                    <option value="chile">Chile</option>
+                                    <option value="paraguay">Paraguay</option>
+                                    <option value="uruguay">Uruguay</option>
+                                </select>
+                            </div>
+                        </form>
+
+                        <div class="total">
+                            <div>
+                                <p class="total-productos">Productos</p>
+                                <p class="total-cantidad">$0</p>
+                            </div>
+                            <div>
+                                <p class="total-envio">Envio</p>
+                                <p class="total-cantidad">$0</p>
+                            </div>
+                            <div>
+                                <p class="total-total">Total</p>
+                                <p class="total-total-cantidad">$0</p>
+                            </div>
+                            <div class="payment-method">
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
+                                    class="method-payment-logo" alt="visa" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
+                                    class="method-payment-logo" alt="mastercard" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
+                                    class="method-payment-logo" alt="amex" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png"
+                                    class="method-payment-logo" alt="banelco" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
+                                    class="method-payment-logo" alt="mercadopago" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
+                                    class="method-payment-logo" alt="pagofacil" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
+                                    class="method-payment-logo" alt="rapipago" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/nativa@2x.png"
+                                    class="method-payment-logo" alt="nativa" />
+                                <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"
+                                    class="method-payment-logo" alt="tarjeta-naranja" />
+                            </div>
+                            <div class="total-comprar">
+                                <button><a href="/products/cartPay">Continuar</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <%- include('../partials/productsRecommended') %>
+            </main>
+        <!-- / M A I N -->
+        <!-- F O O T E R -->
+            <%- include('../partials/footer',{ title:'home', }) %>
+        <!-- F O O T E R -->
+        <script src="/javascripts/glider.js"></script>
+        <script>
+                    window.addEventListener('load', function () {
+                        new Glider(document.querySelector('.glider'), {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            itemWith: 150,
+                            dots: '#dots',
+                            arrows: {
+                                prev: '.glider-prev',
+                                next: '.glider-next'
+                            },
+                            responsive: [{
+                                // screens greater than >= 768px
+                                breakpoint: 768,
+                                settings: {
+                                    // Set to `auto` and provide item width to adjust to viewport
+                                    slidesToShow: 3,
+                                    slidesToScroll: 1,
+                                    itemWidth: 150,
+                                    duration: 0.25
+                                }
+                            }, {
+                                // screens greater than >= 1024px
+                                breakpoint: 1024,
+                                settings: {
+                                    slidesToShow: 5,
+                                    slidesToScroll: 1,
+                                    itemWidth: 150,
+                                    duration: 0.25
+                                }
+                            }]
+                        })
+                    })
+            </script>
+    </body>
+
+</html>

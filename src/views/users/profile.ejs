@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head',{ title:'home', }) %>
+
+    <body id="b0dy__c0nt41n3r">
+        <div class="body--form">
+            <%- include('../partials/logoForms',{ title:'Perfil de usuario' }) %>
+            
+            <div class="body__profile--box">
+                <div class="body__profile--title">
+                    <h3>👋 ¡Hola, bienvenido <span><%= user.userName %></span>!</h3>
+                </div>
+
+                <div class="body__profile--container">
+                        <div class="body__profile--avatar">
+                            <img src="/images/users/<%= user.avatar ? user.avatar.file : 'DEFAULT-IMAGE.jpg' %>" name ="avatar" id="avatar" alt="avatar">
+                        </div>
+
+                        <div class="body__profile--userData">
+                            <div class="body__profile--userFullName">
+                                <figure class="icon--container">
+                                    <i class="fas fa-user"></i>
+                                </figure>
+                                <p class="body__profile--titles">Nombre completo:</p>
+                                <h5><%= user.firstName %> <%= user.lastName %></h5>
+                            </div>
+            
+                            <div class="body__profile--birthday">
+                                <figure class="icon--container">
+                                    <i class="fas fa-calendar-days"></i>
+                                </figure>
+                                <p class="body__profile--titles">Fecha de nacimiento:</p>
+                                <h5><%= user.birthday ? moment(user.birthday).format('DD-MM-YYYY') : null %></h5> 
+                            </div>
+
+                            <div class="body__profile--address">
+                                <figure class="icon--container">
+                                    <i class="fas fa-map-pin"></i>
+                                </figure>
+                                <p class="body__profile--titles">Ubicación:</p>
+                                <h5><%= user.address.city && user.address.province ? `${user.address.city}, ${user.address.province}` : null %> </h5>
+                            </div>
+            
+                            <div class="body__profile--phone">
+                                <figure class="icon--container">
+                                    <i class="fas fa-phone"></i>
+                                </figure>
+                                <p class="body__profile--titles">Número de teléfono:</p>
+                                <h5><%= user.phone %></h5>
+                            </div>
+                            
+                            <div class="body__profile--email">
+                                <figure class="icon--container">
+                                    <i class="fas fa-envelope"></i>
+                                </figure>
+                                <p class="body__profile--titles">E-mail:</p>
+                                <h5><%= user.email %></h5>
+                            </div>
+
+                            <div class="body__profile--aboutMe">
+                                <figure class="icon--container">
+                                    <i class="fas fa-pen-to-square"></i>
+                                </figure>
+                                <p class="body__profile--titles">Acerca de mí:</p>
+                                <h5><%= user.aboutMe %> </h5>
+                            </div>
+                        </div>
+
+                </div>
+
+                <div class="body__profile--edit">
+                    <a href="/users/profileUpdate">Editar Perfil</a>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+</html>
